@@ -1,0 +1,6 @@
+en:
+  time:
+    formats:
+      full_month: "%B %e, %Y"
+      date_and_time: "%m/%d/%Y %l:%m%P"
+      date_only: "%-m/%-d/%Y"

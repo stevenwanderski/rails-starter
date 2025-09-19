@@ -1,0 +1,60 @@
+<div class="h-full bg-gray-50">
+  <div class="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <%= render 'layouts/flash_messages' %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <%= image_tag 'logo-circle.png', class: 'mx-auto h-20 w-auto' %>
+
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+        Sign in to your account
+      </h2>
+
+      <% if devise_mapping.registerable? %>
+        <p class="mt-2 text-center text-sm text-gray-600">
+          Or
+          <%= link_to 'create a new account', new_user_registration_path, class: 'font-medium text-indigo-600 hover:text-indigo-500' %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="space-y-6">
+            <div>
+              <%= f.label :email, class: 'label' %>
+              <div class="mt-2">
+                <%= f.email_field :email, autofocus: false, autocomplete: "email", class: 'input' %>
+              </div>
+            </div>
+
+            <div>
+              <%= f.label :password, class: 'label' %>
+              <div class="mt-2">
+                <%= f.password_field :password, autocomplete: "current-password", class: 'input' %>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <%= f.check_box :remember_me, class: 'h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600' %>
+                <%= f.label :remember_me, class: 'ml-2 block text-sm text-gray-900' %>
+              </div>
+
+              <div class="text-sm">
+                <%= link_to 'Forgot your password?', new_user_password_path, class: 'font-medium text-indigo-600 hover:text-indigo-500' %>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn">
+                Sign in
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

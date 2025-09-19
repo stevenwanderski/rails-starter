@@ -1,0 +1,40 @@
+<div class="h-full bg-gray-50">
+  <div class="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <% if !flash.empty? %>
+        <div class="mb-6">
+          <%= render 'layouts/flash_messages' %>
+        </div>
+      <% end %>
+
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+        Reset Password
+      </h2>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <div class="space-y-6">
+            <div>
+              <%= f.label :email, class: 'label' %>
+              <div class="mt-2">
+                <%= f.email_field :email, required: true, autofocus: false, autocomplete: "email", class: 'input' %>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn">
+                Submit
+              </button>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="mt-6 flex justify-center">
+          <%= link_to 'Cancel', new_session_path(resource_name), class: 'font-medium text-indigo-600 hover:text-indigo-500' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

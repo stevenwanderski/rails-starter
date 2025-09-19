@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <title>Rails Starter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application" %>
+    <%= favicon_link_tag asset_path 'lemon-black.svg' %>
+  </head>
+
+  <body class="h-full">
+    <%= yield %>
+  </body>
+</html>

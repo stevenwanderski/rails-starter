@@ -1,0 +1,59 @@
+<div class="h-full bg-gray-50">
+  <div class="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <% if !flash.empty? %>
+        <div class="mb-6">
+          <%= render 'layouts/flash_messages' %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <%= image_tag 'logo-circle.png', class: 'mx-auto h-20 w-auto' %>
+
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+        Create a new account
+      </h2>
+
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Or
+        <%= link_to 'login to your account', new_user_session_path, class: 'font-medium text-indigo-600 hover:text-indigo-500' %>
+      </p>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="space-y-6">
+            <div>
+              <%= f.label :email, class: 'label' %>
+              <div class="mt-2">
+                <%= f.email_field :email, required: true, autofocus: false, autocomplete: "email", class: 'input' %>
+              </div>
+            </div>
+
+            <div>
+              <%= f.label :password, class: 'label' %>
+              <div class="mt-2">
+                <%= f.password_field :password, required: true, autocomplete: "current-password", class: 'input' %>
+              </div>
+            </div>
+
+            <div>
+              <%= f.label :password_confirmation, class: 'label' %>
+              <div class="mt-2">
+                <%= f.password_field :password_confirmation, required: true, autocomplete: "current-password", class: 'input' %>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn">
+                Create account
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
