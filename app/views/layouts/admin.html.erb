@@ -50,7 +50,7 @@
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
                 <%= active_link_to 'Home',
-                    admin_recipes_path,
+                    admin_path,
                     class: 'rounded-md px-3 py-2 text-sm font-medium',
                     class_active: 'bg-gray-900 text-white',
                     class_inactive: 'text-gray-300 hover:bg-gray-700 hover:text-white'
@@ -86,7 +86,7 @@
       <div class="sm:hidden" id="mobile-menu" x-show="navOpen">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <%= active_link_to 'Home',
-              admin_recipes_path,
+              admin_path,
               class: 'block rounded-md px-3 py-2 text-base font-medium',
               class_active: 'bg-gray-900 text-white',
               class_inactive: 'text-gray-300 hover:bg-gray-700 hover:text-white'
